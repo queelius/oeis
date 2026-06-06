@@ -1,0 +1,108 @@
+================================================================
+Candidate OEIS submission: C1 (FLAGSHIP)
+k=2 chemical reaction networks up to species permutation, by reaction count
+================================================================
+
+Status: DRAFT, not yet proposed (prepared Jun 05 2026).
+Provenance: src/reaction_networks_census.py;
+            tests/test_reaction_networks_census.py;
+            discoveries/biology/reaction-networks/census-README.md.
+
+This is a complete, finite sequence (offset 1, 20 terms, then 0).
+Two independent computations agree on every term:
+  (A) direct S_2-canonical enumeration of all 2^20 reaction subsets;
+  (B) Burnside / cycle-index count of S_2-orbits per reaction count.
+
+----------------------------------------------------------------
+OEIS submission (%-field format, ready to paste)
+----------------------------------------------------------------
+
+%S A000000 8,99,570,2445,7752,19440,38760,63090,83980,92504,83980,63090,38760,19440,7752,2445,570,100,10,1
+%N A000000 Number of chemical reaction networks on 2 species, up to permutation of the species, having exactly n reactions, where every complex is mono- or bimolecular (total stoichiometry at most 2), no complex is the zero complex, and both species are used.
+%C A000000 A reaction network here is a nonempty set of directed reactions y -> y', where each complex y is a vector in {0,1,2}^2 with coordinate sum in {1,2} (the species counts of a mono- or bimolecular complex), and y != y' in each reaction. Two networks are considered the same iff one is carried to the other by a permutation of the 2 species (the symmetric group S_2 acting by relabeling the coordinates). Complexes are NOT independently relabeled: a complex carries its fixed stoichiometric meaning. Only networks in which both species appear in some complex are counted.
+%C A000000 The ground set of admissible directed reactions has exactly R = 20 elements, so the total number of admissible networks (over all n) is finite. Hence a(n) = 0 for n > 20, and a(n) is defined for 1 <= n <= 20. The total over all n is Sum_{n=1..20} a(n) = 524796.
+%C A000000 This equivalence (species permutation S_k only) is COARSER in the species labels but FINER in the complexes than the full reaction-network isomorphism used in the enumeration literature (Deshpande and Gopalkrishnan, 2019), where automorphisms of the complex-species bipartite/digraph relabel species and complexes simultaneously. The two relations give different counts; this sequence is stated for the S_k-only convention.
+%C A000000 The deficiency of such a network is delta = m - l - s, where m is the number of distinct complexes, l is the number of linkage classes (weakly connected components of the reaction graph on complexes), and s is the rank over Q of the stoichiometric matrix (columns y' - y). For these networks delta is at most 2. The count refined by deficiency is given in the project census; here only the total over all deficiencies is reported.
+%H A000000 M. Feinberg, Foundations of Chemical Reaction Network Theory, Applied Mathematical Sciences 202, Springer, 2019.
+%H A000000 A. Towell, <a href="https://github.com/queelius/open-problems">Census of small chemical reaction networks by deficiency: source code and verification (src/reaction_networks_census.py)</a>, 2026.
+%F A000000 a(n) = (1/2) * Sum_{g in S_2} F(g, n), where F(g, n) is the number of n-element subsets of the 20 admissible directed reactions that are fixed by the species permutation g and in which both species are used (Burnside's lemma / cycle index of the S_2 action on the reaction ground set).
+%e A000000 a(1) = 8: the 8 single-reaction networks on species {A, B} that use both species and are inequivalent under the swap A <-> B (lex-min canonical representatives): B -> A; B -> A+B; B -> 2A; 2B -> A; 2B -> A+B; 2B -> 2A; A+B -> B; A+B -> 2B.
+%e A000000 a(20) = 1: taking all 20 admissible reactions gives the single complete reaction graph on the admissible complexes; it is weakly reversible and has deficiency 2.
+%Y A000000 Cf. A000000 (k=3 analogue), A000000 (k=4 analogue).
+%K A000000 nonn,fini,full
+%O A000000 1,1
+%A A000000 _Alex Towell_, Jun 05 2026
+
+----------------------------------------------------------------
+DATA (plain, for a b-file if requested)
+----------------------------------------------------------------
+1 8
+2 99
+3 570
+4 2445
+5 7752
+6 19440
+7 38760
+8 63090
+9 83980
+10 92504
+11 83980
+12 63090
+13 38760
+14 19440
+15 7752
+16 2445
+17 570
+18 100
+19 10
+20 1
+
+(Note the asymmetry a(2)=99 vs a(18)=100, a(3)=570 vs a(17)=570 etc.: the
+sequence is NOT palindromic, because "both species used" is not invariant
+under complementation of the reaction subset.)
+
+----------------------------------------------------------------
+Verification (verification-always)
+----------------------------------------------------------------
+
+Method A (direct): census(k=2, max_stoich=2, r_max=None) enumerates all
+2^20 subsets of the 20 admissible reactions, keeps those using both
+species, canonicalizes each under the 2 permutations of S_2 (lex-min
+reaction tuple), and tallies orbit representatives by reaction count.
+Wall: ~16 s single process (frozen as test_complete_census_k2_full_2pow20).
+
+Method B (Burnside): orbit_count_burnside(2, 2, n) for n=1..20 computes
+the S_2-orbit count via a cycle-index DP over the action of each
+permutation on the 20-element reaction set, restricted to the
+all-species-used invariant subset. Wall: < 1 ms total.
+
+Both methods return, for n=1..20:
+  8, 99, 570, 2445, 7752, 19440, 38760, 63090, 83980, 92504,
+  83980, 63090, 38760, 19440, 7752, 2445, 570, 100, 10, 1
+Sum = 524796 (independently cross-checked against the grand total of
+the complete census). Re-confirmed Jun 05 2026.
+
+Reproduce:
+  python3 -c "from src.reaction_networks_census import orbit_count_burnside; \
+    print([orbit_count_burnside(2,2,r) for r in range(1,21)])"
+  python3 -m pytest tests/test_reaction_networks_census.py -k complete_census_k2
+
+----------------------------------------------------------------
+Prior-art distinctness
+----------------------------------------------------------------
+
+OEIS (searched Jun 05 2026, all NO MATCH):
+  full 20-term DATA; the prefix 99,570,2445,7752,19440,38760; the
+  texts "chemical reaction network deficiency", "non-isomorphic
+  reaction networks", "mass action reaction networks", "Feinberg
+  deficiency". OEIS currently contains no chemical-reaction-network
+  enumeration or deficiency sequences in any form.
+
+Literature: Deshpande and Gopalkrishnan, "Fast Enumeration of
+Non-isomorphic Chemical Reaction Networks" (CMSB 2019) count CRNs up
+to FULL isomorphism (e.g. 428502 non-isomorphic vs 635040 labelled for
+5 complexes, 4 reactions). That group relabels complexes as well as
+species, so its counts differ from this S_2-only sequence and do not
+contain it. Stated under the S_k-only convention, this integer
+sequence appears to be new.
+================================================================

@@ -1,0 +1,21 @@
+id: sat-P4
+title: "Minimum number of edges in a P_4-saturated graph on n vertices (P_4 = path on 4 vertices)"
+role: authored
+status: candidate
+domain: extremal-graph-theory
+offset: 4
+data: "2, 4, 3, 5, 4, 6, 5, 7, 6, 8, 7, 9, 8, 10, 9, 11, 10, 12, 11, 13"
+formula: "a(n) = n/2 if n even, (n+3)/2 if n odd, for n >= 4 (Kaszonyi-Tuza 1986); a(n) = a(n-2) + 1 for n >= 6."
+source_repo: open-problems
+source_path: src/graph_saturation.py
+reproduce: reproduce.py
+validated: true
+notes: >
+  Graph saturation number sat(n, P_4): a graph G on n vertices is P_4-saturated
+  if it is P_4-free but adding any missing edge creates a P_4; sat(n, P_4) is the
+  minimum edge count over all such G. Non-monotone (even n admits a sparser
+  near-perfect-matching configuration). reproduce.py fast-recomputes n=4..9 by
+  MaxSAT (RC2 via src/graph_saturation.sat_path) and verifies all 20 published
+  terms (n=4..23) against the proven Kaszonyi-Tuza closed form sat_formula_p4,
+  which the project validated against the MaxSAT solver. Draft submission; not
+  yet on OEIS (re-check for collisions before submitting).

@@ -1,0 +1,27 @@
+id: max-tail-bivariate
+title: "Triangle of triangles B(n,t,c): number of functions f:{1..n}->{1..n} whose functional graph has max tail length (rho-height) exactly t and exactly c cyclic points (read by rows, full-square)"
+role: authored
+status: candidate
+domain: combinatorics
+offset: 1
+data: "1,0,2,2,0,0,0,6,3,12,0,6,0,0,0,0,0,24,4,48,72,0,36,48,0,0,24,0,0,0,0,0,0,0,120,5,160,540,480,0,200,600,360,0,0,300,240,0,0,0,120,0,0,0,0,0,0,0,0,0,720,6,480,3240,5760,3600,0,1170,6000,7560,2880,0,0,3360,5040,2160,0,0,0,2520,1440,0,0,0,0,720,0,0,0,0,0"
+formula: "B(n,t,c) = n! [x^n u^c] ( 1/(1 - u e_t(x)) - 1/(1 - u e_{t-1}(x)) ), where e_t is the e.g.f. of rooted trees of height <= t: e_0 = x, e_t = x exp(e_{t-1}), e_{-1} = 0."
+source_repo: open-problems
+source_path: src/max_tail_bivariate.py
+reproduce: reproduce.py
+validated: true
+notes: >
+  Bivariate refinement of the max-tail-length (rho-height) distribution of
+  functional graphs by the number of cyclic points. Proved bivariate EGF
+  (Theorem A, Flajolet-Sedgewick markings: SEQ of u-marked tree-slots). Both
+  marginals are classical OEIS: sum over c = A216242 (Critzer; max tail length),
+  sum over t = A066324 (endofunctions by cyclic points, closed form
+  C(n,c) c! c n^(n-c-1) for c<n, n! for c=n); the t=1 slice is A199673. The full
+  joint triangle was NOT found in OEIS (searched Jun 2026) and is a submission
+  candidate (keyword nonn,tabf). DATA is the full-square flattening for n=1..6
+  (outer t=0..n-1, inner c=1..n, explicit zeros; 91 terms). reproduce.py
+  recomputes B via the EGF and checks it cell-by-cell against brute force over
+  all n^n maps (n=1..6), verifies both marginals (A216242 via
+  src/max_tail_length.distribution_triangle, A066324 via cyclic_points_marginal),
+  and confirms the flattened DATA. A companion joint Bm(n,t,m) by components
+  (marginal A060281) exists but is not the primary submission.

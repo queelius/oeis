@@ -1,0 +1,68 @@
+OEIS Submissions: three new z(m,n;3,4) terms (May 2026)
+========================================================
+
+** SUBMISSION STATUS: all three PROPOSED to OEIS Jun 05 2026 (in editor
+review queue, "proposed" state). Credited "from Alex Towell, Jun 05 2026".
+  A006622 a(10)=73  -> https://oeis.org/draft/A006622
+  A006615 a(11)=79  -> https://oeis.org/draft/A006615
+  A006625 a(10)=79  -> https://oeis.org/draft/A006625
+Awaiting editor approval (prior reviewers: Marcus, Irvine). **
+
+All three EXACT, each proven by a two-sided machine check:
+  lower bound  = SAT witness (Kissat), independently verified K_{3,4}-free
+  upper bound  = UNSAT under double-lex symmetry breaking (sound; Flener
+                 et al. CP 2002). See ../symbreak/METHODOLOGY.md.
+
+The double-lex break is what made the upper bounds reachable: the plain
+encoding could not resolve z(10,11;3,4) w=73 in 7+ days; with symmetry
+breaking it took 27 min. Validated on known exact values z(9,9)=56,
+z(9,11)=66 before deployment.
+
+Convention: this project computes z = a - 1, where a is the OEIS term
+(k_{s,t} threshold). Submit the a-values below.
+
+---------------------------------------------------------------------
+## 1. A006615: z(n,n;3,4) -- a(11) = 79
+
+EXACT VALUE: z(11,11;3,4) = 78.
+  Lower: SAT witness, 11x11, 78 ones, 0 forbidden 3x4 submatrices
+         (attempts/z_11_11_3_4_w78.txt).
+  Upper: UNSAT at weight 79, double-lex, 9202 s
+         (symbreak/z_11_11_3_4_w79_symbreak.json).
+DATA (a(4..11)): 15, 22, 31, 38, 46, 57, 67, 79
+EXTENSIONS: a(11) from _Alex Towell_, May 2026
+Prior term a(10)=67 also ours (Irvine, Mar 26 2026).
+
+## 2. A006622: z(n,n+1;3,4) -- a(10) = 73
+
+EXACT VALUE: z(10,11;3,4) = 72.
+  Lower: SAT witness, 10x11, 72 ones, 0 forbidden 3x4 submatrices
+         (attempts/z_10_11_3_4_w72.txt).
+  Upper: UNSAT at weight 73, double-lex, 1633 s
+         (symbreak/z_10_11_3_4_w73_symbreak.json).
+DATA (a(3..10)): 12, 18, 26, 33, 41, 51, 61, 73
+EXTENSIONS: a(10) from _Alex Towell_, May 2026
+Prior term a(9)=61 also ours (Marcus, Mar 22 2026).
+
+## 3. A006625: z(n,n+2;3,4) -- a(10) = 79
+
+EXACT VALUE: z(10,12;3,4) = 78.
+  Lower: SAT witness, 10x12, 78 ones, 0 forbidden 3x4 submatrices
+         (attempts/z_10_12_3_4_w78.txt).
+  Upper: UNSAT at weight 79, double-lex, 3494 s
+         (symbreak/z_10_12_3_4_w79_symbreak.json).
+DATA (a(3..10)): 14, 21, 28, 36, 45, 55, 67, 79
+EXTENSIONS: a(10) from _Alex Towell_, May 2026
+Prior term a(9)=67 also ours (Irvine, Mar 29 2026).
+
+---------------------------------------------------------------------
+CONSISTENCY (monotonicity, all hold):
+  z(9,11)=66 <= z(10,11)=72        (one more row)
+  z(10,10)=66 <= z(10,11)=72       (one more column)
+  z(10,11)=72 <= z(10,12)=78       (one more column)
+  z(10,11)=72 <= z(11,11)=78       (one more row)
+
+REVIEWERS (prior, likely again): Michel Marcus, Sean A. Irvine.
+METHOD NOTE for submission comment: values verified by SAT (witness)
+plus double-lex symmetry-broken UNSAT; all witnesses re-checked
+independently for the K_{3,4}-free property.

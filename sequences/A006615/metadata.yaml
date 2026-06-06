@@ -1,0 +1,22 @@
+id: A006615
+title: "k_{3,4}(n,n) = z(n,n;3,4) + 1: related to maximum 1s in an n X n 0-1 matrix with no 3 X 4 all-ones submatrix"
+role: extended
+status: published
+domain: extremal-graph-theory
+offset: 4
+data: "15, 22, 31, 38, 46, 57, 67, 79"
+formula: "a(n) = z(n,n;3,4) + 1, where z is the Zarankiewicz number."
+source_repo: open-problems
+source_path: src/zarankiewicz.py
+reproduce: reproduce.py
+validated: true
+notes: >
+  Classical OEIS sequence; this project added a(10)=67 (z(9,9;3,4) note, published
+  via Sean A. Irvine Mar 26 2026 -- a(10) corresponds to z=66) and proposed
+  a(11)=79 (z(11,11;3,4)=78) Jun 5 2026, proved by a SAT witness for the lower
+  bound and a double-lex symmetry-broken UNSAT (src/zarankiewicz_symbreak.py,
+  9202 s) for the upper bound. Convention: project computes z = a - 1.
+  reproduce.py fast-recomputes z(n,n;3,4) by MaxSAT (RC2) for n=4..6, validates
+  all originally published terms (n=4..10) against the module's SAT-proven
+  KNOWN_Z_3_4 table, and cites a(11)=79 from the in-review submission/UNSAT proof
+  (not re-run: minutes-to-days SAT). DATA shown is a(4..11).

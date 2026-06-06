@@ -1,0 +1,26 @@
+id: A395521
+title: "Number of non-isomorphic abelian groups appearing as the sandpile group K(G) of a connected graph on n vertices"
+role: authored
+status: published
+domain: algebraic-graph-theory
+offset: 2
+data: "1, 2, 5, 16, 71, 461, 4855"
+formula: ""
+source_repo: open-problems
+source_path: src/sandpile_groups/build_catalog.py
+reproduce: reproduce.py
+validated: true
+notes: >
+  Authored by Alex Towell; published on OEIS (approved May 2026, reviewer Sean A.
+  Irvine). The sandpile group (critical group / Jacobian / Picard group) of a
+  connected graph G is K(G) = Z^(n-1)/image(reduced Laplacian); invariant factors
+  via Smith normal form, |K(G)| = number of spanning trees (matrix-tree theorem).
+  a(n) counts distinct group signatures over all connected graphs on n vertices;
+  a(n) <= A001349(n). n=4 example: groups {trivial, Z/3, Z/4, Z/8, Z/16} = 5.
+  The actual value-generating logic lives in src/sandpile.py
+  (enumerate_connected_graphs via pynauty, sandpile_group, group_signature),
+  which src/sandpile_groups/build_catalog.py orchestrates; src/sandpile.py was
+  copied alongside the other modules so the catalog's imports resolve in this
+  self-contained repo. reproduce.py recomputes the entire DATA (n=2..8) from
+  scratch (~25s) and cross-checks the connected-graph count at each n against
+  OEIS A001349 (1,2,6,21,112,853,11117).

@@ -1,0 +1,25 @@
+id: crn-k2-by-reactions
+title: "Number of chemical reaction networks on 2 species, up to species permutation, with exactly n reactions (mono-/bimolecular complexes, no zero complex, both species used)"
+role: authored
+status: candidate
+domain: reaction-network-theory
+offset: 1
+data: "8, 99, 570, 2445, 7752, 19440, 38760, 63090, 83980, 92504, 83980, 63090, 38760, 19440, 7752, 2445, 570, 100, 10, 1"
+formula: "a(n) = (1/2) * Sum_{g in S_2} F(g, n), where F(g, n) is the number of n-element subsets of the 20 admissible directed reactions fixed by species permutation g with both species used (Burnside / cycle index of the S_2 action)."
+source_repo: open-problems
+source_path: src/reaction_networks_census.py
+reproduce: reproduce.py
+validated: true
+notes: >
+  Complete finite sequence (keyword nonn,fini,full): the admissible directed-
+  reaction ground set has R=20 elements, so a(n)=0 for n>20 and Sum a(n)=524796.
+  Networks identified under S_2 species permutation only (complexes keep their
+  fixed stoichiometric meaning), which is coarser in species but finer in
+  complexes than full CRN isomorphism (Deshpande-Gopalkrishnan 2019); appears
+  new in OEIS. NOT palindromic: a(2)=99 vs a(18)=100, because "both species used"
+  is not invariant under reaction-subset complementation. Draft submission
+  prepared Jun 5 2026, not yet proposed. reproduce.py recomputes all 20 terms via
+  the Burnside cycle-index route (orbit_count_burnside, instant) and optionally
+  cross-checks against the full 2^20 direct S_2-canonical census (set
+  CRN_FULL_CENSUS=1; ~40s). Both routes agree term-for-term and on the grand
+  total 524796.

@@ -1,0 +1,75 @@
+================================================================
+Candidate OEIS submission: C3
+k=4 chemical reaction networks up to species permutation, by reaction count
+================================================================
+
+Status: DRAFT, not yet proposed (prepared Jun 05 2026).
+Provenance: src/reaction_networks_census.py;
+            tests/test_reaction_networks_census.py;
+            discoveries/biology/reaction-networks/census-README.md.
+
+Two independent computations agree on every directly-enumerated term:
+  (A) direct S_4-canonical enumeration of subsets of the R=182 admissible
+      reactions, for r = 1..4 (r=4 is ~44M subsets, ~8 min on 12 cores);
+  (B) Burnside / cycle-index count of S_4-orbits per reaction count,
+      which agrees with (A) on r=1..4 and extends to all r (R = 182).
+
+----------------------------------------------------------------
+OEIS submission (%-field format, ready to paste)
+----------------------------------------------------------------
+
+%S A000000 1,376,32748,1687101,63401197,1910161912,48417491697,1062403646326,20563627273768,355904068630428
+%N A000000 Number of chemical reaction networks on 4 species, up to permutation of the species, having exactly n reactions, where every complex is mono- or bimolecular (total stoichiometry at most 2), no complex is the zero complex, and all four species are used.
+%C A000000 A reaction network here is a nonempty set of directed reactions y -> y', where each complex y is a vector in Z_{>=0}^4 with coordinate sum in {1,2} (a mono- or bimolecular complex), y != y' in each reaction. Two networks are identified iff a permutation of the 4 species (the symmetric group S_4 acting on the coordinates) carries one to the other; complexes are not independently relabeled. Only networks in which all 4 species appear are counted.
+%C A000000 The admissible directed reactions form a ground set of size R = 182, so the sequence is finite with last nonzero term at n = 182. Terms beyond direct enumeration (n >= 5) are obtained by Burnside's lemma (cycle index of the S_4 action), which agrees with direct enumeration on n = 1..4.
+%C A000000 a(1) = 1 because, up to S_4, the only single reaction using all four species with mono/bimolecular complexes is A + B -> C + D.
+%C A000000 This convention (species permutation S_k only) is coarser in species and finer in complexes than the full reaction-network isomorphism of Deshpande and Gopalkrishnan (2019), where automorphisms of the complex-species graph permute species and complexes together; the two equivalence relations give different counts.
+%H A000000 M. Feinberg, Foundations of Chemical Reaction Network Theory, Applied Mathematical Sciences 202, Springer, 2019.
+%H A000000 A. Towell, <a href="https://github.com/queelius/open-problems">Census of small chemical reaction networks by deficiency: source code and verification (src/reaction_networks_census.py)</a>, 2026.
+%F A000000 a(n) = (1/24) * Sum_{g in S_4} F(g, n), where F(g, n) is the number of n-element subsets of the 182 admissible directed reactions fixed by the species permutation g and using all 4 species (Burnside / cycle index of the S_4 action on the reaction ground set).
+%e A000000 a(1) = 1: the unique single-reaction network on {A, B, C, D} using all four species is A + B -> C + D.
+%e A000000 a(2) = 376: the inequivalent 2-reaction networks on 4 species using all four (up to S_4).
+%Y A000000 Cf. A000000 (k=2 analogue), A000000 (k=3 analogue).
+%K A000000 nonn,fini,hard
+%O A000000 1,1
+%A A000000 _Alex Towell_, Jun 05 2026
+
+----------------------------------------------------------------
+Notes for the submission
+----------------------------------------------------------------
+
+- DATA shows n=1..10. The full sequence terminates at n=182. A b-file is
+  producible in milliseconds via orbit_count_burnside(4,2,n).
+- Keyword "hard": deficiency-resolved direct enumeration is bounded by
+  C(182,n) subsets and was reached only to n=4 (~44M subsets at n=4);
+  Burnside gives the totals freely.
+
+----------------------------------------------------------------
+Verification (verification-always)
+----------------------------------------------------------------
+
+Direct vs Burnside, re-confirmed Jun 05 2026:
+  n=1: 1        == 1
+  n=2: 376      == 376
+  n=3: 32748    == 32748
+  n=4: 1687101  == 1687101   (Burnside-confirmed; full enumeration ~8 min)
+Burnside extension n=5..10:
+  63401197, 1910161912, 48417491697, 1062403646326,
+  20563627273768, 355904068630428.
+
+Reproduce:
+  python3 -c "from src.reaction_networks_census import orbit_count_burnside; \
+    print([orbit_count_burnside(4,2,r) for r in range(1,11)])"
+  python3 -c "from src.reaction_networks_census import census; \
+    r=census(k=4, max_stoich=2, r_max=3); print({n:r.by_r[n]['total'] for n in range(1,4)})"
+
+----------------------------------------------------------------
+Prior-art distinctness
+----------------------------------------------------------------
+
+OEIS (Jun 05 2026): NO MATCH for the full DATA or the prefix
+376,32748,1687101,63401197. No CRN enumeration/deficiency sequences
+exist in OEIS. Distinct from Deshpande-Gopalkrishnan full-isomorphism
+counts (different equivalence group). New as stated under the S_k-only
+convention.
+================================================================

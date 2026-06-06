@@ -1,0 +1,34 @@
+id: S-Zn-3
+title: "Maximum 3-colorable sum-free subset of Z/nZ"
+role: authored
+status: candidate
+domain: additive-combinatorics
+offset: 2
+data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 13]
+source_repo: computational-explorations
+source_path: src/schur_algorithms.py
+reproduce: reproduce.py
+validated: true
+notes: >
+  a(n) = the maximum size of a subset A of Z/nZ that can be partitioned into
+  three sum-free sets (3-colored so no color class contains a, b, c with
+  a + b == c mod n). Generator: backtrack_schur(cyclic_group(n), k=3), a
+  backtracking + forward-checking solver on the fixed Schur-triple constraint
+  graph, copied verbatim (pysat-free) into src/schur_backtrack.py from the
+  source repo's src/schur_algorithms.py. reproduce.py recomputes n=2..15 in
+  ~1.4 s, cross-checks against the brute-force schur_number(..., k=3) on the
+  tractable range n=2..10, and asserts the data above.
+
+  a(n) = n - 1 for n = 2..14 (every nonzero element 3-colorable sum-free);
+  first deviation at a(15) = 13 = n - 2. NOT order-invariant for k=3:
+  S(Z/9Z, 3) = 8 != S(Z/3Z x Z/3Z, 3) = 7 (so the cyclic restriction matters).
+
+  OEIS novelty (checked 2026-06, fmt=text search endpoint): the full sequence
+  1,2,3,4,5,6,7,8,9,10,11,12,13,13 returns only two hits, both coincidental
+  near-linear sub-word collisions and NOT this sequence:
+    - A274933 (non-attacking queens on a quarter chessboard), offset 1,
+      data 1,1,2,3,...,13,13,14,15,... keeps climbing after the stall;
+    - A357563 (a Hofstadter-like meta-recurrence b(n)-2b(b(b(n)))), offset 3,
+      our run appears buried mid-sequence.
+  Neither shares this object, offset, or continuation. CANDIDATE-NEW.
+  Submission draft in oeis-submission.txt.

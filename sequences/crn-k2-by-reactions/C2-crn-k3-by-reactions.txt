@@ -1,0 +1,78 @@
+================================================================
+Candidate OEIS submission: C2
+k=3 chemical reaction networks up to species permutation, by reaction count
+================================================================
+
+Status: DRAFT, not yet proposed (prepared Jun 05 2026).
+Provenance: src/reaction_networks_census.py;
+            tests/test_reaction_networks_census.py;
+            discoveries/biology/reaction-networks/census-README.md.
+
+Two independent computations agree on every directly-enumerated term:
+  (A) direct S_3-canonical enumeration of subsets of the R=72 admissible
+      reactions, for r = 1..5 (r=5 is ~14M subsets);
+  (B) Burnside / cycle-index count of S_3-orbits per reaction count,
+      which agrees with (A) on r=1..5 and extends to all r (R = 72).
+DATA below lists the Burnside values r=1..12 (the first five are also
+direct-enumeration confirmed); the b-file may run to r=72.
+
+----------------------------------------------------------------
+OEIS submission (%-field format, ready to paste)
+----------------------------------------------------------------
+
+%S A000000 5,350,9487,169539,2326089,26027406,245501271,1994838324,14185596452,89369029624,503715292988,2560549967460
+%N A000000 Number of chemical reaction networks on 3 species, up to permutation of the species, having exactly n reactions, where every complex is mono- or bimolecular (total stoichiometry at most 2), no complex is the zero complex, and all three species are used.
+%C A000000 A reaction network here is a nonempty set of directed reactions y -> y', where each complex y is a vector in Z_{>=0}^3 with coordinate sum in {1,2} (a mono- or bimolecular complex), y != y' in each reaction. Two networks are the same iff a permutation of the 3 species (the symmetric group S_3 acting on the coordinates) carries one to the other; complexes are not independently relabeled. Only networks in which all 3 species appear are counted.
+%C A000000 The admissible directed reactions form a ground set of size R = 72, so the sequence is finite with last nonzero term at n = 72; a(n) = 0 for n > 72. Terms beyond direct enumeration (n >= 6) are obtained by Burnside's lemma (cycle index of the S_3 action), which agrees with direct enumeration on n = 1..5.
+%C A000000 This convention (species permutation S_k only) is coarser in species and finer in complexes than the full reaction-network isomorphism of the enumeration literature (Deshpande and Gopalkrishnan, 2019), in which automorphisms of the complex-species graph permute species and complexes together; the two equivalence relations give different counts.
+%C A000000 The deficiency delta = m - l - s (m = number of complexes, l = number of linkage classes, s = rank over Q of the stoichiometric matrix) of these networks is at most 3, first reaching 3 at n = 4. The breakdown by deficiency is in the project census; here only the total is reported.
+%H A000000 M. Feinberg, Foundations of Chemical Reaction Network Theory, Applied Mathematical Sciences 202, Springer, 2019.
+%H A000000 A. Towell, <a href="https://github.com/queelius/open-problems">Census of small chemical reaction networks by deficiency: source code and verification (src/reaction_networks_census.py)</a>, 2026.
+%F A000000 a(n) = (1/6) * Sum_{g in S_3} F(g, n), where F(g, n) is the number of n-element subsets of the 72 admissible directed reactions fixed by the species permutation g and using all 3 species (Burnside / cycle index of the S_3 action on the reaction ground set).
+%e A000000 a(1) = 5: the single-reaction networks on species {A, B, C} using all three species, up to permuting A, B, C (lex-min representatives): C -> A+B; 2C -> A+B; B+C -> A; B+C -> A+C; B+C -> 2A.
+%Y A000000 Cf. A000000 (k=2 analogue), A000000 (k=4 analogue).
+%K A000000 nonn,fini,hard
+%O A000000 1,1
+%A A000000 _Alex Towell_, Jun 05 2026
+
+----------------------------------------------------------------
+Notes for the submission
+----------------------------------------------------------------
+
+- DATA shows n=1..12. The full sequence terminates at n=72 (a(72)=1, the
+  complete reaction graph on all admissible complexes). A b-file to n=72
+  is producible in milliseconds via orbit_count_burnside(3,2,n).
+- Keyword "hard": deficiency-resolved direct enumeration is bounded by
+  C(72,n) subsets and was reached only to n=5; the totals are easy via
+  Burnside, but the underlying combinatorial object is nontrivial.
+
+----------------------------------------------------------------
+Verification (verification-always)
+----------------------------------------------------------------
+
+Direct vs Burnside, re-confirmed Jun 05 2026:
+  n=1: 5        == 5
+  n=2: 350      == 350
+  n=3: 9487     == 9487
+  n=4: 169539   == 169539
+  n=5: 2326089  == 2326089   (frozen in the slow census test)
+Burnside extension n=6..12:
+  26027406, 245501271, 1994838324, 14185596452, 89369029624,
+  503715292988, 2560549967460.
+
+Reproduce:
+  python3 -c "from src.reaction_networks_census import orbit_count_burnside; \
+    print([orbit_count_burnside(3,2,r) for r in range(1,13)])"
+  python3 -c "from src.reaction_networks_census import census; \
+    r=census(k=3, max_stoich=2, r_max=4); print({n:r.by_r[n]['total'] for n in range(1,5)})"
+
+----------------------------------------------------------------
+Prior-art distinctness
+----------------------------------------------------------------
+
+OEIS (Jun 05 2026): NO MATCH for the full DATA or the prefix
+350,9487,169539,2326089. No CRN enumeration/deficiency sequences exist
+in OEIS. Distinct from Deshpande-Gopalkrishnan full-isomorphism counts
+(different equivalence group). New as stated under the S_k-only
+convention.
+================================================================

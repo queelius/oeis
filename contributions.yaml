@@ -1,0 +1,171 @@
+# OEIS contributions by Alexander R. Towell (queelius).
+#
+# Single source of truth for this portfolio. Each record links to the source
+# computation in its home research repo (which is NOT moved here; this repo
+# curates the contributions and reproduces their terms). scripts/validate.py
+# lints this file; scripts/render_readme.py regenerates README.md from it.
+#
+# status: published | in-review | candidate | withdrawn | not-submittable
+# role:   authored (new sequence) | extended (new terms on an existing one)
+
+author:
+  name: Alexander Towell
+  handle: queelius
+  email: lex@metafunctor.com
+  orcid: 0000-0001-6443-9897
+
+source_repos:
+  open-problems: https://github.com/queelius/open-problems
+  computational-explorations: https://github.com/queelius/computational-explorations
+
+sequences:
+
+  # ---- Authored (new sequences) ----
+  - id: A394445
+    title: "Distinct-variable 2-color Rado numbers for x+y=n*z"
+    role: authored
+    status: published
+    domain: ramsey-theory
+    source_repo: open-problems
+    source_path: src/rado_numbers.py
+    data_dir: sequences/A394445
+    bfile: bfiles/b394445.txt
+    reviewers: [Michel Marcus, Manfred Scheucher, Sean A. Irvine, Kevin Ryde]
+    doi: 10.5281/zenodo.19372727
+    notes: "Theorem-backed closed form; 500-term b-file."
+
+  - id: A394661
+    title: "Triangle T(n,k): number of prime knots with n crossings and three-genus k"
+    role: authored
+    status: published
+    domain: knot-theory
+    source_repo: open-problems
+    source_path: discoveries/topology/knot-invariants
+    data_dir: sequences/A394661
+    reviewers: [Sean A. Irvine]
+    doi: 10.5281/zenodo.20057589
+
+  - id: A395521
+    title: "Number of distinct sandpile groups of connected graphs on n vertices"
+    role: authored
+    status: published
+    domain: algebraic-graph-theory
+    source_repo: open-problems
+    source_path: discoveries/algebraic-graph-theory/sandpile-groups
+    data_dir: sequences/A395521
+
+  - id: A395644
+    title: "Number of fibered prime knots with n crossings"
+    role: authored
+    status: published
+    domain: knot-theory
+    source_repo: open-problems
+    source_path: discoveries/topology/knot-invariants
+    data_dir: sequences/A395644
+
+  # ---- Extended (new terms on classical Zarankiewicz sequences) ----
+  - id: A006615
+    title: "z(n,n;3,4): least k forcing an all-ones 3x4 submatrix in an n X n 0/1 matrix"
+    role: extended
+    status: published
+    domain: extremal-graph-theory
+    source_repo: open-problems
+    source_path: src/zarankiewicz.py
+    data_dir: sequences/A006615
+    my_terms: ["a(10)=67", "a(11)=79"]
+    reviewers: [Sean A. Irvine]
+    notes: "a(11)=79 accepted Jun 2026 (z(11,11;3,4)=78, proved by double-lex symmetry-broken UNSAT)."
+
+  - id: A006622
+    title: "z(n,n+1;3,4): least k forcing an all-ones 3x4 submatrix in an n X (n+1) matrix"
+    role: extended
+    status: published
+    domain: extremal-graph-theory
+    source_repo: open-problems
+    source_path: src/zarankiewicz.py
+    data_dir: sequences/A006622
+    my_terms: ["a(9)=61", "a(10)=73"]
+    reviewers: [Michel Marcus]
+    notes: "a(10)=73 accepted Jun 2026 (z(10,11;3,4)=72; the 7-day-to-27-min symmetry-breaking proof)."
+
+  - id: A006625
+    title: "z(n,n+2;3,4): least k forcing an all-ones 3x4 submatrix in an n X (n+2) matrix"
+    role: extended
+    status: published
+    domain: extremal-graph-theory
+    source_repo: open-problems
+    source_path: src/zarankiewicz.py
+    data_dir: sequences/A006625
+    my_terms: ["a(9)=67", "a(10)=79"]
+    reviewers: [Sean A. Irvine]
+    notes: "a(10)=79 accepted Jun 2026 (z(10,12;3,4)=78, double-lex symmetry-broken UNSAT)."
+
+  # ---- Candidate-new (drafted, not yet submitted) ----
+  - id: crn-k2-by-reactions
+    title: "Number of chemical reaction networks on 2 species (up to species permutation) by reaction count"
+    role: authored
+    status: candidate
+    domain: reaction-networks
+    source_repo: open-problems
+    source_path: src/reaction_networks_census.py
+    data_dir: sequences/crn-k2-by-reactions
+    notes: "Complete 20-term sequence; two-method confirmed (direct + Burnside). See also crn-k3, crn-k4 drafts."
+
+  - id: max-tail-bivariate
+    title: "Triangle: functional graphs on [n] by (max tail length, number of cyclic points)"
+    role: authored
+    status: candidate
+    domain: finite-maps
+    source_repo: open-problems
+    source_path: src/max_tail_bivariate.py
+    data_dir: sequences/max-tail-bivariate
+    notes: "Proved bivariate EGF; joint triangle absent from OEIS. Marginals are A216242/A066324."
+
+  - id: sat-P4
+    title: "sat(n, P_4): minimum edges in a P_4-saturated graph on n vertices"
+    role: authored
+    status: candidate
+    domain: extremal-graph-theory
+    source_repo: open-problems
+    source_path: src/graph_saturation.py
+    data_dir: sequences/sat-P4
+    notes: "Non-monotone; closed form Kaszonyi-Tuza 1986."
+
+  - id: S-Zn-2
+    title: "Maximum 2-colorable sum-free subset of Z/nZ"
+    role: authored
+    status: candidate
+    domain: additive-combinatorics
+    source_repo: computational-explorations
+    source_path: docs/oeis_candidates.md
+    data_dir: sequences/S-Zn-2
+    notes: "From computational-explorations; order-invariant for abelian groups (verified n<=20). Novelty-check pending."
+
+  - id: S-Zn-3
+    title: "Maximum 3-colorable sum-free subset of Z/nZ"
+    role: authored
+    status: candidate
+    domain: additive-combinatorics
+    source_repo: computational-explorations
+    source_path: docs/oeis_candidates.md
+    data_dir: sequences/S-Zn-3
+    notes: "NOT order-invariant. Novelty-check pending."
+
+  # ---- Other dispositions (tracked for completeness) ----
+  - id: A042950
+    title: "Comment: Lucas-triangle row sums = Boolean-measure tuple counts"
+    role: comment
+    status: withdrawn
+    domain: boolean-complexity
+    source_repo: open-problems
+    source_path: discoveries/boolean-measures-n5
+    notes: "Withdrawn May 2026 (Irvine: 5 matching terms insufficient without structural reason)."
+
+  - id: A069001
+    title: "3-row Chomp Grundy values"
+    role: extended
+    status: not-submittable
+    domain: combinatorial-games
+    source_repo: open-problems
+    source_path: src/chomp.py
+    notes: "Computed to n=1000 but Heuer's b-file already has 2522 terms."

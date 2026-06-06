@@ -1,0 +1,42 @@
+OEIS extension submission draft (DO NOT SUBMIT until SAT result confirmed)
+
+Sequence: A006625
+Existing values: a(n) for n = 3..9 are 14, 21, 28, 36, 45, 55, 67
+                  ( = z(n, n+2; 3, 4) - 1 wait actually equal to k_{3,4}(n, n+2) which is z + 1)
+
+Re-checking the convention used in the existing module:
+  src/zarankiewicz.py KNOWN_Z_3_4_RECT2 says z(9,11;3,4) = 66, with comment
+  "A006625: a(n) for n=3..9: 14, 21, 28, 36, 45, 55, 67; z(n,n+2;3,4) = a(n) - 1"
+
+So the OEIS convention is k_{3,4}(m, n) = z(m, n; 3, 4) + 1.
+
+Pending SAT result: z(10, 12; 3, 4) ?
+  Witnesses found at weights 67..78 (latest: w=78 in 1.4s)
+  Boundary at weight 79: SAT call running ~57 minutes as of last check
+  Most likely outcome: UNSAT at w=79, giving z(10, 12; 3, 4) = 78
+
+If z(10, 12; 3, 4) = 78 confirmed:
+  -> a(10) = 79
+
+Submission template (internal format, fill in after confirmation):
+
+%H A006625 Alex Towell, <a href="https://github.com/queelius/open-problems">Source code, witness matrices, and SAT search logs</a>
+%E A006625 a(10) = 79 from _Alex Towell_, [date]
+
+In the discussion field:
+
+  Computed via SAT-based search (CaDiCaL solver). Found a K_{3,4}-free
+  10 x 12 matrix with 78 ones; the cardinality-lower-bound encoding
+  proved no K_{3,4}-free 10 x 12 matrix has 79 ones, giving
+  z(10, 12; 3, 4) = 78 = a(10) - 1.
+  Witness matrix attached at /home/spinoza/github/research/open-problems/discoveries/extremal-graph-theory/zarankiewicz/attempts/z_10_12_3_4_w78.txt
+  This continues the SAT-based extensions to A006615 / A006622 / A006625
+  in this repository.
+
+Pre-submission checklist:
+  [ ] confirm UNSAT at weight 79 (or revise to whatever boundary lands)
+  [ ] verify witness matrix passes is_kst_free and count_ones == 78
+  [ ] update KNOWN_Z_3_4_RECT2 in src/zarankiewicz.py: (10, 12): 78
+  [ ] add test in tests/test_zarankiewicz.py
+  [ ] mint Zenodo deposit version with witness matrix attached
+  [ ] propose OEIS edit

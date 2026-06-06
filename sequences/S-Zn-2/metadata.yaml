@@ -1,0 +1,37 @@
+id: S-Zn-2
+title: "Maximum 2-colorable sum-free subset of Z/nZ"
+role: authored
+status: candidate
+domain: additive-combinatorics
+offset: 2
+data: [1, 2, 3, 4, 4, 4, 6, 6, 8, 8, 9, 8, 9, 12, 12, 12, 12, 12, 16]
+source_repo: computational-explorations
+source_path: src/schur_groups.py
+reproduce: reproduce.py
+validated: true
+notes: >
+  a(n) = the maximum size of a subset A of Z/nZ that can be partitioned into
+  two sum-free sets (2-colored so neither color class contains a, b, c with
+  a + b == c mod n). Generator: schur_number(cyclic_group(n), k=2) in the
+  copied src/schur_groups.py (pure stdlib, exhaustive). reproduce.py
+  recomputes n=2..20 in ~23 s and asserts the data above.
+
+  Order-invariant for k=2: for every abelian group G with |G| = n,
+  S(G, 2) = a(n) (verified through n=20 in the source repo). Non-monotone:
+  a(13) = 8 < a(12) = 9.
+
+  OEIS novelty (checked 2026-06, fmt=text search endpoint): NO MATCH for the
+  full prefix 1,2,3,4,4,4,6,6,8,8,9,8,9,12,12,12,12,12,16, nor for the
+  distinctive sub-run 4,4,6,6,8,8,9,8,9,12 that captures the 9->8->9 dip.
+  CANDIDATE-NEW. Submission draft in oeis-submission.txt. The k=1 case
+  (maximum sum-free subset of Z/nZ) is a separate, possibly-known sequence
+  and is not claimed here.
+
+  Related novelty check (Sidon-squares, also in source repo's
+  docs/oeis_candidates.md, item 3): a(n) = max Sidon subset of
+  {1, 4, 9, ..., n^2}. This is ALREADY IN OEIS as A390813
+  ("size of the largest Sidon subset of the first n positive perfect
+  squares", offset 1). A390813 data agrees with the doc's computed values
+  through n=25, then diverges (A390813 a(26)=17 vs doc 16): the doc's
+  heuristic undercounts for larger n; A390813 holds the correct (larger)
+  values. NOT submittable -- already covered by A390813.

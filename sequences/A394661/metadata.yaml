@@ -1,0 +1,37 @@
+# OEIS A394661 -- portfolio metadata
+# Schema mirrors contributions.yaml; this file is the per-sequence record.
+id: A394661
+title: "Triangle T(n,k) = number of prime knots with n crossings and three-genus k"
+role: authored
+status: published
+domain: knot-theory
+offset: "3,6"            # OFFSET: first index n=3; term of value > 1 at position 6
+data: [1, 1, 1, 1, 1, 2, 2, 4, 1, 2, 10, 9, 4, 22, 22, 1, 2, 44, 93, 26, 6, 96, 289, 160, 1]
+formula: by-census       # no closed form; counts come from the KnotInfo knot census
+source_repo: open-problems
+source_path: discoveries/topology/knot-invariants
+doi: 10.5281/zenodo.20057589
+reproduce: reproduce.py
+validated: full-recomputation   # all 25 terms recomputed from committed catalog.json; exact match
+data_file: data/catalog.json    # committed snapshot of the KnotInfo-derived per-knot catalog (801 knots, c<=11)
+reviewers: [Sean A. Irvine]
+keywords: [nonn, tabf, hard, more]
+notes: >
+  Triangle read by rows: T(n,k) is the number of prime knots with crossing
+  number n and three-genus (Seifert genus) k, for n >= 3 and
+  1 <= k <= floor((n-1)/2). Row sums equal A002863 (prime knots by crossing
+  number): 1,1,2,3,7,21,49,165,552 for n=3..11.
+
+  KnotInfo provenance: counts derive from the KnotInfo table of knot
+  invariants (Livingston-Moore), accessed in the source repo via
+  src/knot_invariants.py using the spherogram package (Rolfsen table c<=10,
+  Hoste-Thistlethwaite c=11) with three-genus from knot_floer_homology (HFK).
+  The committed data/catalog.json is the machine-readable snapshot;
+  reproduce.py recomputes the full triangle from it with no external package
+  dependency. The genus-by-crossing distribution agrees with KnotInfo at
+  every n=3..11 (unlike the |signature| column, which has a known c=11
+  spherogram labeling artifact; see A395644 notes).
+
+  Convention: the Perko pair (10_161 = 10_162; Perko 1974) is counted once;
+  knots are counted as distinct unoriented prime knots up to mirror image,
+  following the KnotInfo enumeration.

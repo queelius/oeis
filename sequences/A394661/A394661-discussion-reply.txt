@@ -1,0 +1,30 @@
+Reply to Sean A. Irvine (Tue May 05 19:31):
+
+Thanks for the review. Addressed all three points:
+
+1. EXTENDED to row n = 11 using KnotInfo as the canonical source.
+   The chirality issue I flagged in the original truncation is a property
+   of the spherogram package, not of the underlying KnotInfo enumeration.
+   KnotInfo counts each unoriented prime knot up to mirror image once
+   (the standard convention of Livingston-Moore), and its c = 11 row is
+   well-defined and matches A002863(11) = 552. Row n = 11: 6, 96, 289,
+   160, 1. The sequence is now defined for any n that KnotInfo covers
+   (currently through n = 13). I removed the truncation note from the
+   COMMENTS.
+
+2. Renamed the function from T(c, g) to T(n, k) per OEIS convention.
+   Updated NAME, COMMENTS, and EXAMPLE accordingly. (Where the
+   distinction matters in EXAMPLE, "row n = 7" is used.)
+
+3. Added LINKS for terminology:
+     - KnotInfo (Livingston-Moore) as the canonical source
+     - database_knotinfo Python package
+     - Perko 1974 original paper (DOI link)
+     - Wikipedia: Crossing number (knot theory)
+     - Wikipedia: Perko pair
+     - Wikipedia: Seifert surface
+   Added a citation to Perko 1974 in the COMMENTS where the Perko pair
+   exclusion is explained.
+
+The Zenodo deposit (10.5281/zenodo.19962842) is being updated with the
+KnotInfo-derived row n = 11 to match.

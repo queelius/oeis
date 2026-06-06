@@ -1,0 +1,70 @@
+================================================================
+Candidate OEIS submission: S2
+================================================================
+
+NAME (one line):
+Number of connected graphs on n vertices whose sandpile group K(G) is
+cyclic.
+
+DATA (offset 2):
+1, 2, 5, 14, 69, 520, 7075
+
+OFFSET:
+2,2
+
+COMMENTS:
+The sandpile group (also known as critical group, Jacobian, or Picard
+group) of a connected graph G is K(G) = Z^(n-1) / image(L'), where L'
+is the reduced Laplacian. |K(G)| equals the number of spanning trees
+of G.
+
+A graph G has cyclic sandpile group iff the Smith Normal Form of L'
+has all but possibly the last invariant factor equal to 1. The trivial
+group K(G) = Z/1 is included; a graph has trivial K(G) iff G is a tree
+(A000055).
+
+a(n) - A000055(n) counts the connected graphs on n vertices with
+non-trivial cyclic sandpile group K(G) = Z/k for some k >= 2:
+
+  n:                    2  3  4  5   6   7    8
+  a(n):                 1  2  5 14  69 520 7075
+  A000055(n):           1  1  2  3   6  11   23
+  non-trivial cyclic:   0  1  3 11  63 509 7052
+
+REFERENCES:
+N. L. Biggs, Chip-firing and the critical group of a graph,
+Journal of Algebraic Combinatorics, 9 (1999), 25-45.
+
+LINKS:
+A. Towell, Catalog of sandpile groups for connected graphs on n <= 8
+vertices, Apr 2026 (project repository).
+
+CROSSREFS:
+A001349 (all connected graphs on n vertices)
+A000055 (trees, with K(G) trivial)
+
+EXAMPLE:
+n=4: of 6 connected graphs, 5 have cyclic K(G):
+  2 trees (trivial), the 3-cycle plus pendant (Z/3), 4-cycle (Z/4),
+  4-cycle plus chord (Z/8). The complete graph K_4 has K(K_4) = (Z/4)^2
+  which is non-cyclic, so it is excluded. a(4) = 5.
+
+KEYWORD:
+nonn,more
+
+AUTHOR:
+Alex Towell, Apr 27 2026
+
+================================================================
+Verification
+================================================================
+
+Computed from the same catalog as S1; cyclic sandpile group is
+recognized by examining the invariant factor sequence. Sanity checks:
+
+- a(n) >= A000055(n) for all n (trees are a subset).
+- a(n) <= A001349(n) (cyclic graphs are a subset of all connected).
+- Both inequalities are strict for n >= 4 (e.g., K_4 has non-cyclic
+  K(G), tree count is < graph count).
+
+================================================================

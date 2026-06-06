@@ -1,0 +1,63 @@
+OEIS Submission Candidate: sat(n, P_4)
+=======================================
+
+Graph saturation number for the path P_4 (path on 4 vertices, 3 edges).
+
+A graph G on n vertices is P_4-saturated if it contains no P_4 as a
+subgraph, but adding any missing edge creates one. sat(n, P_4) is the
+minimum number of edges over all P_4-saturated graphs on n vertices.
+
+STATUS: draft, not yet submitted. Re-check OEIS for collisions at
+submission time (last harvest search: Apr 26 2026).
+
+---------------------------------------------------------------------
+NAME
+  Minimum number of edges in a P_4-saturated graph on n vertices, where
+  P_4 is the path on 4 vertices.
+
+DATA (offset 4; n = 4, 5, 6, ...)
+  2, 4, 3, 5, 4, 6, 5, 7, 6, 8, 7, 9, 8, 10, 9, 11, 10, 12, 11, 13
+
+OFFSET
+  4
+
+FORMULA
+  a(n) = n/2 if n is even, (n+3)/2 if n is odd, for n >= 4.
+  (Kaszonyi and Tuza, 1986.)
+  a(n) = a(n-2) + 1 for n >= 6.
+  G.f. and linear recurrence available (period-2 quasi-polynomial).
+
+COMMENTS
+  The sequence is non-monotone: it oscillates because even n admits a
+  sparser P_4-saturated graph (a perfect or near-perfect matching plus
+  one extra edge) than the adjacent odd n.
+  A P_4-saturated graph is a disjoint union of stars (a star forest)
+  together with the saturation condition; the extremal configurations
+  are characterized by Kaszonyi and Tuza.
+
+KEYWORDS
+  nonn,easy
+
+REFERENCES (one per line, alphabetical by author)
+  L. Kaszonyi and Zs. Tuza, Saturated graphs with minimum number of
+    edges, J. Graph Theory 10 (1986), 203-210.
+
+LINKS
+  (none required; formula is elementary)
+
+CROSSREFS
+  Cf. graph-saturation numbers for other forbidden subgraphs.
+  sat(n, K_t) = (t-2)*n - C(t-1, 2)  (Erdos-Hajnal-Moon 1964).
+  sat(n, C_4) = floor((3n-5)/2)      (Ollmann 1972).
+
+---------------------------------------------------------------------
+VERIFICATION
+  - Closed form proved for all n >= 4 (Kaszonyi-Tuza 1986).
+  - Computational witnesses (minimum P_4-saturated graphs) on disk for
+    n = 6, 7, 8 confirm a(6)=3, a(7)=5, a(8)=4:
+      discoveries/extremal-graph-theory/saturation-witnesses.json
+  - PENDING: full MaxSAT recomputation across n = 4..12 once compute
+    frees (current machine load too high for foreground MaxSAT).
+
+AUTHOR
+  Alexander Towell (lex@metafunctor.com)

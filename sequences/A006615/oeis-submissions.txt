@@ -1,0 +1,28 @@
+OEIS Submissions for Zarankiewicz Numbers z(m,n;3,4)
+====================================================
+
+All values computed by SAT solving with partition-based decomposition.
+Each value has both a witness matrix (SAT) and a complete UNSAT proof.
+
+## 1. A006622: z(n,n+1;3,4) -- a(9) = 61
+
+Status: PUBLISHED (approved by editors)
+Submitted: Mar 22 2026
+DATA: 12, 18, 26, 33, 41, 51, 61
+EXTENSIONS: a(9) from _Alex Towell_, Mar 22 2026
+Reviewer: Michel Marcus (approved same day)
+
+## 2. A006615: z(n,n;3,4) -- a(10) = 67
+
+Status: PUBLISHED (approved by Sean A. Irvine, Mar 26 2026)
+Submitted: Mar 22 2026
+DATA: 15, 22, 31, 38, 46, 57, 67
+EXTENSIONS: a(10) from _Alex Towell_, Mar 22 2026
+Reviewer: Michel Marcus (moved Guy ref from REFERENCES to LINKS with DOIs, Mar 22)
+
+## 3. A006625: z(n,n+2;3,4) -- a(9) = 67
+
+Status: PUBLISHED (approved by Sean A. Irvine, Mar 29 2026)
+Submitted: Mar 25 2026
+DATA: 14, 21, 28, 36, 45, 55, 67
+EXTENSIONS: a(9) from _Alex Towell_, Mar 25 2026

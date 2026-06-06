@@ -1,0 +1,58 @@
+OEIS submission: T(c, g) = number of prime knots with crossing number c and genus g
+
+NAME
+Triangle read by rows: T(c, g) is the number of prime knots with crossing number c and three-genus g, for c >= 3 and 1 <= g <= floor((c-1)/2).
+
+DATA
+1, 1, 1, 1, 1, 2, 2, 4, 1, 2, 10, 9, 4, 22, 22, 1, 2, 44, 93, 26
+
+OFFSET
+3,6
+
+COMMENTS
+The genus of a knot is the minimum genus of an orientable Seifert surface bounded by the knot. For prime knots through 10 crossings the genus is bounded by floor((c-1)/2), with equality achieved by the (2, 2k+1) torus knots and a small number of others.
+
+Row sums give A002863, the number of prime knots with c crossings: 1, 1, 2, 3, 7, 21, 49, 165 for c = 3..10.
+
+Column g = 1 (genus-1 prime knots, A002863-style refinement): 1, 1, 1, 1, 2, 2, 4, 2 for c = 3..10. (The drop at c = 10 from 4 to 2 is genuine.)
+
+The Perko duplicate 10_161 = 10_162 is excluded.
+
+The table truncates at c = 10 because at c = 11 the genus distribution depends sensitively on enumeration conventions for chiral knots; see the linked source code for discussion.
+
+LINKS
+Alex Towell, <a href="https://doi.org/10.5281/zenodo.19962842">Joint distributions of knot invariants for prime knots through 11 crossings</a>, Zenodo, 2026.
+
+EXAMPLE
+Triangle begins:
+  c=3:  1
+  c=4:  1
+  c=5:  1, 1
+  c=6:  1, 2
+  c=7:  2, 4, 1
+  c=8:  2, 10, 9
+  c=9:  4, 22, 22, 1
+  c=10: 2, 44, 93, 26
+
+Row 7: of the 7 prime knots with 7 crossings, 2 have genus 1 (7_2, 7_4), 4 have genus 2 (7_3, 7_5, 7_6, 7_7), and 1 has genus 3 (the (2,7) torus knot 7_1).
+
+CROSSREFS
+Cf. A002863 (row sums: prime knots by crossing number).
+Cf. A051763 (nonalternating prime knots).
+Cf. A002864 (alternating prime knots).
+Cf. A318051 (sigma signature distribution by crossing).
+
+KEYWORD
+nonn, tabf, hard, more
+
+AUTHOR
+Alex Towell, [date]
+
+---
+
+NOTES FOR SUBMISSION:
+1. Mint a Zenodo DOI for the catalog before submitting (or link to findings.md in repo).
+2. Verify the example row 7 description against actual knot names (the Stoimenow paper or KnotInfo CSV).
+3. The keyword "tabf" is for triangle with finite (variable-length) rows.
+4. Consider whether to submit c <= 11 with a clear comment about the chirality convention, or stop at c = 10. Recommendation: stop at c = 10 to avoid the spherogram/KnotInfo labeling ambiguity flagged in c11-anomaly-investigation.md.
+5. Do NOT include EXTENSIONS line (per past Yuen feedback).

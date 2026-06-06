@@ -1,0 +1,61 @@
+OEIS Submission Candidate: S(Z/nZ, 2)
+=====================================
+
+Maximum size of a subset of the cyclic group Z/nZ that splits into two
+sum-free sets.
+
+STATUS: draft, not yet submitted. Re-check OEIS for collisions at
+submission time (last novelty search: 2026-06-05, fmt=text endpoint;
+no match found, including the distinctive sub-run 4,4,6,6,8,8,9,8,9,12).
+
+---------------------------------------------------------------------
+NAME
+  a(n) is the maximum size of a subset A of the cyclic group Z/nZ such
+  that A can be partitioned into two sum-free sets.
+
+DATA (offset 2; n = 2, 3, 4, ...)
+  1, 2, 3, 4, 4, 4, 6, 6, 8, 8, 9, 8, 9, 12, 12, 12, 12, 12, 16
+
+OFFSET
+  2
+
+COMMENTS
+  A subset S of an abelian group is sum-free if there are no x, y, z in S
+  (not necessarily distinct) with x + y = z. Equivalently, a(n) is the
+  largest m for which the elements of some m-element subset of Z/nZ can be
+  2-colored so that neither color class contains a solution of x + y = z
+  (mod n).
+
+  a(n) is non-monotone: a(13) = 8 < a(12) = 9.
+
+  Order-invariant property: for every abelian group G of order n the
+  analogous quantity (maximum subset of G partitionable into two sum-free
+  sets) equals a(n); that is, the value depends only on n and not on the
+  group structure. This was verified for all abelian groups of order
+  2 <= n <= 20.
+
+  Trivial bounds: s(n) <= a(n) <= n, where s(n) is the maximum size of a
+  single sum-free subset of Z/nZ (the k = 1 case).
+
+KEYWORDS
+  nonn
+
+REFERENCES (one per line, alphabetical by author)
+  (none)
+
+LINKS
+  (none required)
+
+CROSSREFS
+  Cf. maximum size of a single sum-free subset of Z/nZ (the k = 1 case).
+
+---------------------------------------------------------------------
+VERIFICATION
+  - Computed by exhaustive search: schur_number(cyclic_group(n), k=2) in
+    src/schur_groups.py; reproduce.py recomputes n = 2..20 (~23 s) and
+    asserts the data above.
+  - Order-invariance over all abelian groups of order <= 20 checked in the
+    source repo (github.com/queelius/computational-explorations).
+
+AUTHOR
+  Alexander Towell (lex@metafunctor.com)
