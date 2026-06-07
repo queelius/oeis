@@ -1,8 +1,25 @@
 # OEIS submission handoff
 
-Resume point for submitting the candidate-new sequences in this repo. Five
-sequences are drafted, reproducible, and OEIS-novelty-checked; they are not yet
-submitted. Work through them when you open a fresh session here.
+Resume point for submitting the candidate-new sequences in this repo.
+
+## Submission status (updated Jun 07 2026)
+
+Submitted and in the OEIS review queue:
+- **A006622 a(11)=85** (extension; z(11,12;3,4)=84 proven by 2-solver UNSAT).
+- **A396815** = S(Z/nZ,2) (new; provisional number assigned).
+- **A396816** = S(Z/nZ,3) (new; provisional number assigned).
+
+Ready but BLOCKED by the OEIS active-edit limit (max ~3 pending at once) -
+resubmit via `oeis.org/edit/new` once the three above are processed:
+- **crn-k2** (`sequences/crn-k2-by-reactions/C1-crn-k2-by-reactions.txt`)
+- **max-tail-bivariate** (`sequences/max-tail-bivariate/bivariate-README.md`)
+
+HELD by the final review (do not submit as new): **sat-P4** - the integer
+sequence 2,4,3,5,4,6,... is a simple interleaving with many partial OEIS matches
+(not an exact dup of A028242, but collision-prone). Revisit as a possible
+COMMENT on an existing interleaving sequence.
+
+The original per-sequence checklist and drafts follow.
 
 ## Before you submit (per sequence)
 

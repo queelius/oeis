@@ -84,9 +84,9 @@ sequences:
     source_repo: open-problems
     source_path: src/zarankiewicz.py
     data_dir: sequences/A006622
-    my_terms: ["a(9)=61", "a(10)=73"]
+    my_terms: ["a(9)=61", "a(10)=73", "a(11)=85"]
     reviewers: [Michel Marcus]
-    notes: "a(10)=73 accepted Jun 2026 (z(10,11;3,4)=72; the 7-day-to-27-min symmetry-breaking proof)."
+    notes: "a(10)=73 accepted Jun 2026. a(11)=85 submitted Jun 07 2026 (z(11,12;3,4)=84, proven: SAT witness at 84 + UNSAT at 85 confirmed by Kissat and CaDiCaL independently)."
 
   - id: A006625
     title: "z(n,n+2;3,4): least k forcing an all-ones 3x4 submatrix in an n X (n+2) matrix"
@@ -109,7 +109,7 @@ sequences:
     source_repo: open-problems
     source_path: src/reaction_networks_census.py
     data_dir: sequences/crn-k2-by-reactions
-    notes: "Complete 20-term sequence; two-method confirmed (direct + Burnside). See also crn-k3, crn-k4 drafts."
+    notes: "READY; submission blocked Jun 07 2026 by OEIS active-edit limit (3 pending). Resubmit when queue clears. Complete 20-term sequence; two-method confirmed (direct + Burnside). See also crn-k3, crn-k4 drafts."
 
   - id: max-tail-bivariate
     title: "Triangle: functional graphs on [n] by (max tail length, number of cyclic points)"
@@ -119,7 +119,7 @@ sequences:
     source_repo: open-problems
     source_path: src/max_tail_bivariate.py
     data_dir: sequences/max-tail-bivariate
-    notes: "Proved bivariate EGF; joint triangle absent from OEIS. Marginals are A216242/A066324."
+    notes: "READY; submission blocked Jun 07 2026 by OEIS active-edit limit (3 pending). Resubmit when queue clears. Proved bivariate EGF; joint triangle absent from OEIS. Marginals are A216242/A066324."
 
   - id: sat-P4
     title: "sat(n, P_4): minimum edges in a P_4-saturated graph on n vertices"
@@ -129,27 +129,27 @@ sequences:
     source_repo: open-problems
     source_path: src/graph_saturation.py
     data_dir: sequences/sat-P4
-    notes: "Non-monotone; closed form Kaszonyi-Tuza 1986."
+    notes: "HELD (final review Jun 07 2026): integer sequence 2,4,3,5,4,6,... is a simple interleaving with many partial OEIS matches (not an exact dup of A028242, but collision-prone). Investigate as a possible COMMENT on an existing interleaving sequence rather than a new submission."
 
-  - id: S-Zn-2
-    title: "Maximum 2-colorable sum-free subset of Z/nZ"
+  - id: A396815
+    title: "Maximum size of a subset of Z/nZ partitionable into two sum-free sets"
     role: authored
-    status: candidate
+    status: in-review
     domain: additive-combinatorics
     source_repo: computational-explorations
     source_path: docs/oeis_candidates.md
     data_dir: sequences/S-Zn-2
-    notes: "From computational-explorations; order-invariant for abelian groups (verified n<=20). Novelty-check pending."
+    notes: "Submitted Jun 07 2026 (provisional A396815). Order-invariant for abelian groups (verified n<=20). Cf. A211316 (k=1 case)."
 
-  - id: S-Zn-3
-    title: "Maximum 3-colorable sum-free subset of Z/nZ"
+  - id: A396816
+    title: "Maximum size of a subset of Z/nZ partitionable into three sum-free sets"
     role: authored
-    status: candidate
+    status: in-review
     domain: additive-combinatorics
     source_repo: computational-explorations
     source_path: docs/oeis_candidates.md
     data_dir: sequences/S-Zn-3
-    notes: "NOT order-invariant. Novelty-check pending."
+    notes: "Submitted Jun 07 2026 (provisional A396816). NOT order-invariant (Z/3xZ/3 gives 7 vs a(9)=8). Cf. A211316, A396815."
 
   # ---- Other dispositions (tracked for completeness) ----
   - id: A042950

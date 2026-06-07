@@ -56,7 +56,7 @@ pytest                                       # run the copied generators' tests
 | Sequence | Description | Provenance | Status |
 |----------|-------------|------------|--------|
 | [A006615](https://oeis.org/A006615) | z(n,n;3,4): least k forcing an all-ones 3x4 submatrix in an n X n 0/1 matrix a(10)=67, a(11)=79 | [open-problems/src/zarankiewicz.py](https://github.com/queelius/open-problems/blob/main/src/zarankiewicz.py) | published |
-| [A006622](https://oeis.org/A006622) | z(n,n+1;3,4): least k forcing an all-ones 3x4 submatrix in an n X (n+1) matrix a(9)=61, a(10)=73 | [open-problems/src/zarankiewicz.py](https://github.com/queelius/open-problems/blob/main/src/zarankiewicz.py) | published |
+| [A006622](https://oeis.org/A006622) | z(n,n+1;3,4): least k forcing an all-ones 3x4 submatrix in an n X (n+1) matrix a(9)=61, a(10)=73, a(11)=85 | [open-problems/src/zarankiewicz.py](https://github.com/queelius/open-problems/blob/main/src/zarankiewicz.py) | published |
 | [A006625](https://oeis.org/A006625) | z(n,n+2;3,4): least k forcing an all-ones 3x4 submatrix in an n X (n+2) matrix a(9)=67, a(10)=79 | [open-problems/src/zarankiewicz.py](https://github.com/queelius/open-problems/blob/main/src/zarankiewicz.py) | published |
 
 ### Candidate / in review
@@ -66,8 +66,8 @@ pytest                                       # run the copied generators' tests
 | crn-k2-by-reactions | Number of chemical reaction networks on 2 species (up to species permutation) by reaction count | [open-problems/src/reaction_networks_census.py](https://github.com/queelius/open-problems/blob/main/src/reaction_networks_census.py) | candidate |
 | max-tail-bivariate | Triangle: functional graphs on [n] by (max tail length, number of cyclic points) | [open-problems/src/max_tail_bivariate.py](https://github.com/queelius/open-problems/blob/main/src/max_tail_bivariate.py) | candidate |
 | sat-P4 | sat(n, P_4): minimum edges in a P_4-saturated graph on n vertices | [open-problems/src/graph_saturation.py](https://github.com/queelius/open-problems/blob/main/src/graph_saturation.py) | candidate |
-| S-Zn-2 | Maximum 2-colorable sum-free subset of Z/nZ | [computational-explorations/docs/oeis_candidates.md](https://github.com/queelius/computational-explorations/blob/main/docs/oeis_candidates.md) | candidate |
-| S-Zn-3 | Maximum 3-colorable sum-free subset of Z/nZ | [computational-explorations/docs/oeis_candidates.md](https://github.com/queelius/computational-explorations/blob/main/docs/oeis_candidates.md) | candidate |
+| [A396815](https://oeis.org/A396815) | Maximum size of a subset of Z/nZ partitionable into two sum-free sets | [computational-explorations/docs/oeis_candidates.md](https://github.com/queelius/computational-explorations/blob/main/docs/oeis_candidates.md) | in-review |
+| [A396816](https://oeis.org/A396816) | Maximum size of a subset of Z/nZ partitionable into three sum-free sets | [computational-explorations/docs/oeis_candidates.md](https://github.com/queelius/computational-explorations/blob/main/docs/oeis_candidates.md) | in-review |
 
 ### Other dispositions
 
