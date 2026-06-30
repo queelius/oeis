@@ -1,0 +1,16 @@
+[project]
+name = "oeis-contributions"
+version = "0.1.0"
+description = "Self-contained portfolio of OEIS sequences authored or extended by Alexander Towell"
+authors = [{ name = "Alexander Towell", email = "lex@metafunctor.com" }]
+requires-python = ">=3.10"
+dependencies = ["pyyaml"]
+
+[project.optional-dependencies]
+# Generators that use SAT need python-sat; knot reproduction may use sympy/galois.
+sat = ["python-sat"]
+compute = ["sympy", "numpy"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

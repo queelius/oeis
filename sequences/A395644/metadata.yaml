@@ -1,0 +1,29 @@
+id: A395644
+title: Number of fibered prime knots with n crossings
+role: authored
+status: published
+domain: knot-theory
+offset: 3,4
+data:
+- 1
+- 1
+- 1
+- 2
+- 3
+- 12
+- 23
+- 74
+- 256
+- 873
+- 4151
+formula: by-census
+source_repo: open-problems
+source_path: discoveries/topology/knot-invariants
+doi: null
+reproduce: reproduce.py
+validated: partial-recomputation
+data_file: data/catalog.json
+keywords:
+- nonn
+- hard
+- more

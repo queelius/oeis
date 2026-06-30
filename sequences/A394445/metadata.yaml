@@ -1,0 +1,16 @@
+id: A394445
+title: a(n) is the minimum N such that every 2-coloring of {1, ..., N} contains a monochromatic solution
+  to x + y = n*z with x, y, z pairwise distinct
+role: authored
+status: published
+domain: additive-combinatorics
+offset: 1
+data: 9, 9, 15, 20, 25, 31, 49, 41, 54, 61, 77, 85, 104, 113, 135, 145, 170, 181, 209, 221, 252, 265,
+  299, 313, 350, 365, 405, 421, 464, 481, 527, 545, 594, 613, 665, 685, 740, 761, 819, 841, 902, 925,
+  989
+formula: For n >= 8, a(n) = n*(n+3)/2 if n odd, (n^2 + 2*n + 2)/2 if n even (Towell, 2026). a(1..7) =
+  9, 9, 15, 20, 25, 31, 49.
+source_repo: open-problems
+source_path: src/rado_numbers.py
+reproduce: reproduce.py
+validated: true

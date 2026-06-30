@@ -1,0 +1,14 @@
+id: A316632
+title: Sprague-Grundy value for Node-Kayles on the 3 X n grid graph P_3 X P_n
+role: extended
+status: in-review
+domain: combinatorial-games
+offset: 1
+data: 2, 1, 1, 0, 3, 3, 2, 2, 2, 3, 3, 5, 2, 4, 1, 3, 2
+source_repo: open-problems
+source_path: discoveries/oeis-extensions-jun2026
+reproduce: reproduce.py
+validated: true
+my_terms:
+- a(17)=2
+keyword: nonn,more

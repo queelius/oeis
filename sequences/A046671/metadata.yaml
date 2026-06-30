@@ -1,0 +1,15 @@
+id: A046671
+title: Nim-values G(3,n) for Sylver coinage
+role: extended
+status: in-review
+domain: combinatorial-games
+offset: 4
+data: 2, 3, 1, 4, 6, 1, 7, 8, 1, 9, 11, 1, 12, 14, 1, 15, 15, 1, 17, 19, 1, 20, 21, 1, 23, 24, 1
+source_repo: open-problems
+source_path: discoveries/oeis-extensions-jun2026
+reproduce: reproduce.py
+validated: true
+my_terms:
+- a(17)=14
+- a(17..30)=14,1,15,15,1,17,19,1,20,21,1,23,24,1
+keyword: nonn,more

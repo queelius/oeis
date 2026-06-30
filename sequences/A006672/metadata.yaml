@@ -1,0 +1,15 @@
+id: A006672
+title: a(n) = Ramsey number r(C_4, K_{1,n})
+role: extended
+status: in-review
+domain: ramsey-theory
+offset: 1
+data: 4, 4, 6, 7, 8, 9, 11, 12, 13, 14, 16
+formula: 'Parsons (1975): n + ceil(sqrt(n)) + 1 is an upper bound, attained here at n=11.'
+source_repo: open-problems
+source_path: discoveries/oeis-extensions-jun2026
+reproduce: reproduce.py
+validated: true
+my_terms:
+- a(11)=16
+keyword: nonn,hard,more

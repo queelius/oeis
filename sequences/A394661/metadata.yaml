@@ -1,0 +1,46 @@
+id: A394661
+title: Triangle T(n,k) = number of prime knots with n crossings and three-genus k
+role: authored
+status: published
+domain: knot-theory
+offset: 3,6
+data:
+- 1
+- 1
+- 1
+- 1
+- 1
+- 2
+- 2
+- 4
+- 1
+- 2
+- 10
+- 9
+- 4
+- 22
+- 22
+- 1
+- 2
+- 44
+- 93
+- 26
+- 6
+- 96
+- 289
+- 160
+- 1
+formula: by-census
+source_repo: open-problems
+source_path: discoveries/topology/knot-invariants
+doi: 10.5281/zenodo.20057589
+reproduce: reproduce.py
+validated: full-recomputation
+data_file: data/catalog.json
+reviewers:
+- Sean A. Irvine
+keywords:
+- nonn
+- tabf
+- hard
+- more

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+title: "OEIS Contributions (Alexander Towell)"
+message: "If you use these sequences, please cite the OEIS entry and, if relevant, this portfolio."
+type: dataset
+authors:
+  - given-names: Alexander
+    family-names: Towell
+    email: lex@metafunctor.com
+    orcid: "https://orcid.org/0000-0001-6443-9897"
+    alias: queelius
+abstract: >
+  A self-contained portfolio of integer sequences authored or extended in the
+  On-Line Encyclopedia of Integer Sequences (OEIS), spanning Ramsey theory,
+  extremal graph theory, knot theory, additive combinatorics, and algebraic
+  graph theory. Each sequence is reproducible from copied value-generating code.
+keywords:
+  - OEIS
+  - integer sequences
+  - combinatorics
+  - SAT solving
+  - Ramsey theory
+url: "https://github.com/queelius/oeis"

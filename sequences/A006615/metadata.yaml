@@ -1,0 +1,13 @@
+id: A006615
+title: 'k_{3,4}(n,n) = z(n,n;3,4) + 1: related to maximum 1s in an n X n 0-1 matrix with no 3 X 4 all-ones
+  submatrix'
+role: extended
+status: published
+domain: extremal-graph-theory
+offset: 4
+data: 15, 22, 31, 38, 46, 57, 67, 79
+formula: a(n) = z(n,n;3,4) + 1, where z is the Zarankiewicz number.
+source_repo: open-problems
+source_path: src/zarankiewicz.py
+reproduce: reproduce.py
+validated: true

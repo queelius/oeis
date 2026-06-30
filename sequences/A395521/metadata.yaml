@@ -1,0 +1,13 @@
+id: A395521
+title: Number of non-isomorphic abelian groups appearing as the sandpile group K(G) of a connected graph
+  on n vertices
+role: authored
+status: published
+domain: algebraic-graph-theory
+offset: 2
+data: 1, 2, 5, 16, 71, 461, 4855
+formula: ''
+source_repo: open-problems
+source_path: src/sandpile_groups/build_catalog.py
+reproduce: reproduce.py
+validated: true

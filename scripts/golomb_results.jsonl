@@ -1,0 +1,38 @@
+{"m": 1, "n": 1, "G": 1, "proven": true, "witness": [[0, 0]], "seconds": 0.0, "brute": 1, "brute_ok": true}
+{"m": 1, "n": 2, "G": 2, "proven": true, "witness": [[0, 0], [0, 1]], "seconds": 0.0, "brute": 2, "brute_ok": true}
+{"m": 1, "n": 3, "G": 2, "proven": true, "witness": [[0, 1], [0, 2]], "seconds": 0.0, "brute": 2, "brute_ok": true}
+{"m": 1, "n": 4, "G": 3, "proven": true, "witness": [[0, 0], [0, 2], [0, 3]], "seconds": 0.001, "brute": 3, "brute_ok": true}
+{"m": 1, "n": 5, "G": 3, "proven": true, "witness": [[0, 1], [0, 2], [0, 4]], "seconds": 0.0, "brute": 3, "brute_ok": true}
+{"m": 1, "n": 6, "G": 3, "proven": true, "witness": [[0, 2], [0, 4], [0, 5]], "seconds": 0.001, "brute": 3, "brute_ok": true}
+{"m": 1, "n": 7, "G": 4, "proven": true, "witness": [[0, 0], [0, 2], [0, 5], [0, 6]], "seconds": 0.001, "brute": 4, "brute_ok": true}
+{"m": 2, "n": 2, "G": 3, "proven": true, "witness": [[0, 1], [1, 0], [1, 1]], "seconds": 0.001, "brute": 3, "brute_ok": true}
+{"m": 2, "n": 3, "G": 4, "proven": true, "witness": [[0, 1], [0, 2], [1, 0], [1, 2]], "seconds": 0.001, "brute": 4, "brute_ok": true}
+{"m": 2, "n": 4, "G": 4, "proven": true, "witness": [[0, 1], [0, 2], [1, 0], [1, 3]], "seconds": 0.001, "brute": 4, "brute_ok": true}
+{"m": 2, "n": 5, "G": 5, "proven": true, "witness": [[0, 2], [0, 4], [1, 0], [1, 1], [1, 4]], "seconds": 0.002, "brute": 5, "brute_ok": true}
+{"m": 2, "n": 6, "G": 5, "proven": true, "witness": [[0, 2], [0, 3], [0, 5], [1, 1], [1, 5]], "seconds": 0.003, "brute": 5, "brute_ok": true}
+{"m": 2, "n": 7, "G": 5, "proven": true, "witness": [[0, 1], [0, 5], [1, 1], [1, 3], [1, 6]], "seconds": 0.004, "brute": 5, "brute_ok": true}
+{"m": 3, "n": 3, "G": 5, "proven": true, "witness": [[0, 1], [0, 2], [1, 0], [2, 0], [2, 2]], "seconds": 0.003, "brute": 5, "brute_ok": true}
+{"m": 3, "n": 4, "G": 5, "proven": true, "witness": [[0, 3], [1, 0], [1, 2], [2, 0], [2, 3]], "seconds": 0.003, "brute": 5, "brute_ok": true}
+{"m": 3, "n": 5, "G": 6, "proven": true, "witness": [[0, 3], [1, 0], [1, 4], [2, 0], [2, 2], [2, 3]], "seconds": 0.006, "brute": 6, "brute_ok": true}
+{"m": 3, "n": 6, "G": 6, "proven": true, "witness": [[0, 2], [0, 3], [1, 0], [1, 5], [2, 1], [2, 4]], "seconds": 0.009, "brute": 6, "brute_ok": true}
+{"m": 3, "n": 7, "G": 7, "proven": true, "witness": [[0, 2], [0, 6], [1, 0], [1, 6], [2, 2], [2, 3], [2, 5]], "seconds": 0.016, "brute": 7, "brute_ok": true}
+{"m": 4, "n": 4, "G": 6, "proven": true, "witness": [[0, 3], [1, 3], [2, 1], [3, 0], [3, 2], [3, 3]], "seconds": 0.008, "brute": 6, "brute_ok": true}
+{"m": 4, "n": 5, "G": 7, "proven": true, "witness": [[0, 1], [0, 3], [0, 4], [1, 2], [2, 4], [3, 0], [3, 4]], "seconds": 0.013, "brute": 7, "brute_ok": true}
+{"m": 4, "n": 6, "G": 8, "proven": true, "witness": [[0, 3], [0, 4], [1, 1], [1, 5], [2, 0], [3, 0], [3, 3], [3, 5]], "seconds": 0.034, "brute": 8, "brute_ok": true}
+{"m": 4, "n": 7, "G": 8, "proven": true, "witness": [[0, 2], [0, 6], [1, 0], [2, 3], [2, 4], [3, 0], [3, 3], [3, 5]], "seconds": 0.066, "brute": 8, "brute_ok": true}
+{"m": 5, "n": 5, "G": 8, "proven": true, "witness": [[0, 3], [0, 4], [1, 0], [2, 1], [3, 0], [3, 4], [4, 2], [4, 4]], "seconds": 0.06, "brute": 8, "brute_ok": true}
+{"m": 5, "n": 6, "G": 8, "proven": true, "witness": [[0, 2], [0, 3], [1, 1], [1, 5], [2, 5], [4, 0], [4, 3], [4, 5]], "seconds": 0.146}
+{"m": 5, "n": 7, "G": 9, "proven": true, "witness": [[0, 3], [1, 1], [1, 3], [1, 6], [2, 0], [3, 4], [3, 5], [4, 0], [4, 6]], "seconds": 0.324}
+{"m": 6, "n": 6, "G": 9, "proven": true, "witness": [[0, 2], [0, 3], [0, 5], [1, 0], [2, 5], [3, 5], [4, 1], [5, 0], [5, 4]], "seconds": 0.377}
+{"m": 6, "n": 7, "G": 10, "proven": true, "witness": [[0, 3], [0, 5], [0, 6], [1, 2], [2, 0], [2, 4], [4, 0], [4, 6], [5, 1], [5, 6]], "seconds": 1.511}
+{"m": 7, "n": 7, "G": 11, "proven": true, "witness": [[0, 4], [0, 6], [1, 0], [1, 5], [2, 0], [3, 2], [4, 0], [4, 6], [6, 1], [6, 4], [6, 5]], "seconds": 5.645}
+{"m": 1, "n": 8, "G": 4, "proven": true, "witness": [[0, 0], [0, 4], [0, 5], [0, 7]], "seconds": 0.002, "brute": 4, "brute_ok": true}
+{"m": 1, "n": 9, "G": 4, "proven": true, "witness": [[0, 0], [0, 2], [0, 7], [0, 8]], "seconds": 0.001, "brute": 4, "brute_ok": true}
+{"m": 1, "n": 10, "G": 4, "proven": true, "witness": [[0, 2], [0, 6], [0, 8], [0, 9]], "seconds": 0.002, "brute": 4, "brute_ok": true}
+{"m": 1, "n": 11, "G": 4, "proven": true, "witness": [[0, 0], [0, 2], [0, 9], [0, 10]], "seconds": 0.002, "brute": 4, "brute_ok": true}
+{"m": 2, "n": 8, "G": 6, "proven": true, "witness": [[0, 3], [0, 4], [0, 7], [1, 0], [1, 2], [1, 7]], "seconds": 0.006, "brute": 6, "brute_ok": true}
+{"m": 2, "n": 9, "G": 6, "proven": true, "witness": [[0, 3], [0, 8], [1, 0], [1, 4], [1, 6], [1, 7]], "seconds": 0.011, "brute": 6, "brute_ok": true}
+{"m": 2, "n": 10, "G": 7, "proven": true, "witness": [[0, 1], [0, 2], [0, 9], [1, 0], [1, 4], [1, 6], [1, 9]], "seconds": 0.013, "brute": 7, "brute_ok": true}
+{"m": 3, "n": 8, "G": 8, "proven": true, "witness": [[0, 1], [0, 6], [0, 7], [1, 0], [1, 2], [2, 0], [2, 4], [2, 7]], "seconds": 0.028, "brute": 8, "brute_ok": true}
+{"m": 3, "n": 9, "G": 8, "proven": true, "witness": [[0, 2], [0, 7], [0, 8], [1, 0], [1, 2], [2, 1], [2, 4], [2, 8]], "seconds": 0.046, "brute": 8, "brute_ok": true}
+{"m": 4, "n": 8, "G": 9, "proven": true, "witness": [[0, 1], [0, 2], [0, 7], [1, 7], [2, 3], [2, 5], [3, 0], [3, 4], [3, 7]], "seconds": 0.117}

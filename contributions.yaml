@@ -1,0 +1,199 @@
+# OEIS contributions by Alexander R. Towell (queelius).
+# Single source of truth for this portfolio; scripts/render_readme.py
+# regenerates README.md from it, scripts/validate.py lints it.
+
+author:
+  name: Alexander Towell
+  handle: queelius
+  email: lex@metafunctor.com
+  orcid: 0000-0001-6443-9897
+source_repos:
+  open-problems: https://github.com/queelius/open-problems
+  computational-explorations: https://github.com/queelius/computational-explorations
+  oeis: https://github.com/queelius/oeis
+public_index:
+  metafunctor: https://metafunctor.com/research/oeis-contributions/
+  github: https://github.com/queelius/oeis
+sequences:
+- id: A394445
+  metafunctor: true
+  title: Distinct-variable 2-color Rado numbers for x+y=n*z
+  role: authored
+  status: published
+  domain: ramsey-theory
+  source_repo: open-problems
+  source_path: src/rado_numbers.py
+  data_dir: sequences/A394445
+  bfile: bfiles/b394445.txt
+  reviewers:
+  - Michel Marcus
+  - Manfred Scheucher
+  - Sean A. Irvine
+  - Kevin Ryde
+  doi: 10.5281/zenodo.19372727
+- id: A394661
+  metafunctor: true
+  title: 'Triangle T(n,k): number of prime knots with n crossings and three-genus k'
+  role: authored
+  status: published
+  domain: knot-theory
+  source_repo: open-problems
+  source_path: discoveries/topology/knot-invariants
+  data_dir: sequences/A394661
+  reviewers:
+  - Sean A. Irvine
+  doi: 10.5281/zenodo.20057589
+- id: A395521
+  metafunctor: true
+  title: Number of distinct sandpile groups of connected graphs on n vertices
+  role: authored
+  status: published
+  domain: algebraic-graph-theory
+  source_repo: open-problems
+  source_path: discoveries/algebraic-graph-theory/sandpile-groups
+  data_dir: sequences/A395521
+- id: A395644
+  metafunctor: true
+  title: Number of fibered prime knots with n crossings
+  role: authored
+  status: published
+  domain: knot-theory
+  source_repo: open-problems
+  source_path: discoveries/topology/knot-invariants
+  data_dir: sequences/A395644
+- id: A006615
+  metafunctor: true
+  title: 'z(n,n;3,4): least k forcing an all-ones 3x4 submatrix in an n X n 0/1 matrix'
+  role: extended
+  status: published
+  domain: extremal-graph-theory
+  source_repo: open-problems
+  source_path: src/zarankiewicz.py
+  data_dir: sequences/A006615
+  my_terms:
+  - a(10)=67
+  - a(11)=79
+  reviewers:
+  - Sean A. Irvine
+- id: A006622
+  metafunctor: true
+  title: 'z(n,n+1;3,4): least k forcing an all-ones 3x4 submatrix in an n X (n+1) matrix'
+  role: extended
+  status: published
+  domain: extremal-graph-theory
+  source_repo: open-problems
+  source_path: src/zarankiewicz.py
+  data_dir: sequences/A006622
+  my_terms:
+  - a(9)=61
+  - a(10)=73
+  - a(11)=85
+  reviewers:
+  - Michel Marcus
+- id: A006625
+  metafunctor: true
+  title: 'z(n,n+2;3,4): least k forcing an all-ones 3x4 submatrix in an n X (n+2) matrix'
+  role: extended
+  status: published
+  domain: extremal-graph-theory
+  source_repo: open-problems
+  source_path: src/zarankiewicz.py
+  data_dir: sequences/A006625
+  my_terms:
+  - a(9)=67
+  - a(10)=79
+  reviewers:
+  - Sean A. Irvine
+- id: A006672
+  metafunctor: true
+  title: a(n) = Ramsey number r(C_4, K_{1,n})
+  role: extended
+  status: in-review
+  domain: ramsey-theory
+  source_repo: open-problems
+  source_path: discoveries/oeis-extensions-jun2026
+  data_dir: sequences/A006672
+  bfile: bfiles/b006672.txt
+  my_terms:
+  - a(11)=16
+- id: A316632
+  metafunctor: true
+  title: Sprague-Grundy value for Node-Kayles on the 3 X n grid graph P_3 X P_n
+  role: extended
+  status: in-review
+  domain: combinatorial-games
+  source_repo: open-problems
+  source_path: discoveries/oeis-extensions-jun2026
+  data_dir: sequences/A316632
+  bfile: bfiles/b316632.txt
+  my_terms:
+  - a(17)=2
+- id: A046671
+  metafunctor: true
+  title: Nim-values G(3,n) for Sylver coinage
+  role: extended
+  status: in-review
+  domain: combinatorial-games
+  source_repo: open-problems
+  source_path: discoveries/oeis-extensions-jun2026
+  data_dir: sequences/A046671
+  bfile: bfiles/b046671.txt
+  my_terms:
+  - a(17)=14 (submitted)
+  - a(18..30) computed, held
+- id: A397074
+  metafunctor: true
+  title: NPN classes of n-variable Boolean functions with sensitivity = n
+  role: authored
+  status: published
+  domain: boolean-complexity
+  source_repo: open-problems
+  source_path: discoveries/boolean-measures-n5
+- id: A397075
+  metafunctor: true
+  title: NPN classes of n-variable Boolean functions with (real) degree = n
+  role: authored
+  status: published
+  domain: boolean-complexity
+  source_repo: open-problems
+  source_path: discoveries/boolean-measures-n5
+- id: A397076
+  metafunctor: true
+  title: NPN classes of n-variable Boolean functions with decision-tree complexity = n
+  role: authored
+  status: published
+  domain: boolean-complexity
+  source_repo: open-problems
+  source_path: discoveries/boolean-measures-n5
+- id: A396815
+  metafunctor: true
+  title: Maximum size of a subset of Z/nZ partitionable into two sum-free sets
+  role: authored
+  status: published
+  domain: additive-combinatorics
+  source_repo: computational-explorations
+  source_path: docs/oeis_candidates.md
+  data_dir: sequences/S-Zn-2
+- id: A396816
+  metafunctor: true
+  title: Maximum size of a subset of Z/nZ partitionable into three sum-free sets
+  role: authored
+  status: published
+  domain: additive-combinatorics
+  source_repo: computational-explorations
+  source_path: docs/oeis_candidates.md
+  data_dir: sequences/S-Zn-3
+- id: A042950
+  title: 'Comment: Lucas-triangle row sums = Boolean-measure tuple counts'
+  role: comment
+  status: withdrawn
+  domain: boolean-complexity
+  source_repo: open-problems
+  source_path: discoveries/boolean-measures-n5
+- id: A069001
+  title: 3-row Chomp Grundy values
+  role: extended
+  status: not-submittable
+  domain: combinatorial-games
+  source_repo: open-problems
+  source_path: src/chomp.py
